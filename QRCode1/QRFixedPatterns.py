@@ -6,6 +6,8 @@ V1 = 21
 #creation taille matrice
 A = np.zeros((V1, V1))
 
+
+
 def carreG():
     y = 0
     x = 0
@@ -84,14 +86,19 @@ def fixedP():
 
     A[V1-8, 8] = 1
 
+def calibragePattern():
+    carreG()
+    carreD()
+    carreGB()
+    fixedP()
 
-carreG()
-carreD()
-carreGB()
-fixedP()
+# carreG()
+# carreD()
+# carreGB()
+# fixedP()
 
-print(A)
-plt.imshow(A, cmap = 'binary', vmin = 0, vmax = 1, interpolation = 'none')
-plt.show()
+# print(A)
+# plt.imshow(A, cmap = 'binary', vmin = 0, vmax = 1, interpolation = 'none')
+# plt.show()
 
 

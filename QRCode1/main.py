@@ -1,18 +1,15 @@
-# qr code
+from matplotlib import pyplot as plt
 
-import qrcode
+# import perso
+import QRFixedPatterns as FP
+import QRFormatInfo as FI
+import QRMessage as MS
 
-#img = qrcode.make('http://ens.casali.me/')
-#img.ERROR_CORRECT_H
-#img.save('logoQRcode.png')
+FP.calibragePattern()
+FI.InfoH()
+MS.DGBH()
+# MS.DGBH1()
 
-qr = qrcode.QRCode(
-    version=2,
-    error_correction=qrcode.constants.ERROR_CORRECT_L,#7 % error corrected
-    box_size=100,
-    border=3
-)
-qr.add_data('https://ens.casali.me/')
-qr.make()
-img = qr.make_image(fill_color="black", back_color="white")
-img.save('logoQRcode2.png')
+print(FP.A)
+plt.imshow(FP.A, cmap = 'binary', vmin = 0, vmax = 1, interpolation = 'none')
+plt.show()

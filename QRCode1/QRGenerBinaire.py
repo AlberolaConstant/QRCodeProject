@@ -1,23 +1,28 @@
-Information = 'projet qr code'
+from numpy import integer
+
+Information = 'coucou'
 i = 0
-cara = ''
-caraNum = ''
+caraNum = []
 liste = []
-newListe = []
+nombre = [1, 3, 4]
 
 while i < len(Information):
-    cara = Information[i]
-    caraNum = format(ord(cara), 'b')
+    caraNum = format(ord(Information[i]), 'b')
     liste.append(caraNum)
     i = i+1
-print(liste)
 a = 0
-print(format(14, 'b'))
+print (liste)
+
+M = 1
+cool = liste[M]
+cool = list(cool.strip())
+print (cool)
+message = int(cool[2])
+print (message)
+
 #vut sur le site : http://tpe-codebarre2d.e-monsite.com/pages/page.html
 
 # while a < len(liste):
 #     newListe.append(bin(liste[a]*45+liste[a+1]))
 #     a = a+2
 # print(newListe)
-
-print('fin programme')
