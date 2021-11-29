@@ -8,7 +8,7 @@ import QRMessage as MS
 FP.calibragePattern()
 FI.InfoH()
 MS.DGBH()
-# MS.DGBH1()
+MS.RB()
 
 print(FP.A)
 plt.imshow(FP.A, cmap = 'binary', vmin = 0, vmax = 1, interpolation = 'none')
