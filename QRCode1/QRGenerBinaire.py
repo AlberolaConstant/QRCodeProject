@@ -1,10 +1,10 @@
 from numpy import integer
 
-Information = 'coucou'
+Information = 'projet qr code'
 i = 0
 caraNum = []
 liste = []
-nombre = [1, 3, 4]
+
 
 while i < len(Information):
     caraNum = format(ord(Information[i]), 'b')
@@ -12,13 +12,6 @@ while i < len(Information):
     i = i+1
 a = 0
 print (liste)
-
-M = 1
-cool = liste[M]
-cool = list(cool.strip())
-print (cool)
-message = int(cool[2])
-print (message)
 
 #vut sur le site : http://tpe-codebarre2d.e-monsite.com/pages/page.html
 

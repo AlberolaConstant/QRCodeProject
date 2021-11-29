@@ -1,62 +1,105 @@
 import QRFixedPatterns as FP
 import QRGenerBinaire as GB
 
-# message = [0, 1, 1, 0, 0, 0, 1, 1]
 
+def DGBH(M, Y, X, D):
 
-
-
-def DGBH():
-    M = 0
-    y = FP.V1 - 7
-    x = FP.V1 - 1
-    d = 0
     tabCara = GB.liste[M]
     tabCara = list(tabCara.strip())
-    tabCara.insert(0,0)
+    while len(tabCara) < 8:
+        tabCara.insert(0,0)
 
-    while d < 7:
-        message = tabCara[d]
-        FP.A[y, x] = message
-        x = x - 1
-        d = d + 1
-        message = tabCara[d]
-        FP.A[y, x] = message
-        x = x + 1
-        y = y - 1
-        d = d + 1
+    while D < 7:
+        message = tabCara[D]
+        FP.A[Y, X] = message
+        X = X - 1
+        D = D + 1
+        message = tabCara[D]
+        FP.A[Y, X] = message
+        X = X + 1
+        Y = Y - 1
+        D = D + 1
 
-def RB ():
-    M = 1
-    y = 10
-    x = FP.V1 - 1
-    d = 0
+
+
+def DGHB(M, Y, X, D):
+
     tabCara = GB.liste[M]
     tabCara = list(tabCara.strip())
-    tabCara.insert(0,0)
+    while len(tabCara) < 8:
+        tabCara.insert(0,0)
 
-    while d < 3:
-        message = tabCara[d]
-        print (message)
-        FP.A[y,x] = message
-        x = x - 1
-        d = d + 1
-        message = tabCara[d]
-        FP.A[y, x] = message
-        x = x + 1
-        y = y - 1
-        d = d + 1
+    while D < 7:
+        message = tabCara[D]
+        FP.A[Y, X] = message
+        X = X - 1
+        D = D + 1
+        message = tabCara[D]
+        FP.A[Y, X] = message
+        X = X + 1
+        Y = Y + 1
+        D = D + 1
 
-    y = 9
-    x = FP.V1 - 3
-    d = 4
-    while d < 7:
-        message = tabCara[d]
-        FP.A[y,x] = message
-        x = x - 1
-        d = d + 1
-        message = tabCara[d]
-        FP.A[y, x] = message
-        x = x + 1
-        y = y + 1
-        d = d + 1
+def RVB (M, Y, X, D):
+
+    tabCara = GB.liste[M]
+    tabCara = list(tabCara.strip())
+    while len(tabCara) < 8:
+        tabCara.insert(0,0)
+
+    while D < 3:
+        message = tabCara[D]
+        FP.A[Y,X] = message
+        X = X - 1
+        D = D + 1
+        message = tabCara[D]
+        FP.A[Y, X] = message
+        X = X + 1
+        Y = Y - 1
+        D = D + 1
+
+    Y = 9
+    X = FP.V1 - 3
+    D = 4
+    while D < 7:
+        message = tabCara[D]
+        FP.A[Y,X] = message
+        X = X - 1
+        D = D + 1
+        message = tabCara[D]
+        FP.A[Y, X] = message
+        X = X + 1
+        Y = Y + 1
+        D = D + 1
+
+def RVH (M, Y, X, D):
+
+    tabCara = GB.liste[M]
+    tabCara = list(tabCara.strip())
+    while len(tabCara) < 8:
+        tabCara.insert(0,0)
+
+    while D < 3:
+        message = tabCara[D]
+        FP.A[Y,X] = message
+        X = X - 1
+        D = D + 1
+        message = tabCara[D]
+        FP.A[Y, X] = message
+        X = X + 1
+        Y = Y + 1
+        D = D + 1
+
+    Y = FP.V1 - 1
+    X = FP.V1 - 5
+    D = 4
+    while D < 7:
+        message = tabCara[D]
+        FP.A[Y, X] = message
+        X = X - 1
+        D = D + 1
+        message = tabCara[D]
+        FP.A[Y, X] = message
+        X = X + 1
+        Y = Y - 1
+        D = D + 1
