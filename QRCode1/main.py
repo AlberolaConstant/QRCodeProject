@@ -51,13 +51,23 @@ MS.RVH(M=10, Y=FP.V1 - 2, X=FP.V1 - 7, D=0)
 ############################
 y = FP.V1 - 3
 x = FP.V1 - 9
-m = 5
+m = 11
 for i in range(3):
     MS.DGBH(M=m, Y=y, X=x, D=0)
     m = m + 1
     y = y - 4
     x = FP.V1 - 9
-    print(m)
+y = y - 1
+MS.DGBH(M=m, Y=y, X=x, D=0)
+
+###########################
+MS.RVB(M=15, Y=1, X=FP.V1 - 9, D=0)
+############################
+m = 16
+y = 2
+x = FP.V1 - 11
+MS.DGHB(M=m, Y=y, X=x, D=0)
+###########################Fin message coder
 
 
 # dessinez le QR code

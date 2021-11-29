@@ -1,6 +1,6 @@
 from numpy import integer
 
-Information = 'projet qr code'
+Information = 'projet qr code ptut'
 i = 0
 caraNum = []
 liste = []
