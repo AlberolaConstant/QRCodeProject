@@ -1,8 +1,12 @@
 # QRCodeProject
 Alberola Constant
-Enzo Vargas 
+
+Enzo Vargas
+
 Thomas Celeschi
+
 Oussama Talbi
+
 Adrien Lacroix
 
 Projet de Ptut pour l'IUT 
