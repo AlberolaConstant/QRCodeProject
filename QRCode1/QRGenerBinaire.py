@@ -5,7 +5,7 @@ i = 0
 caraNum = []
 liste = []
 
-
+print (Information)
 while i < len(Information):
     caraNum = format(ord(Information[i]), 'b')
     liste.append(caraNum)
