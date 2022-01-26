@@ -6,7 +6,7 @@ formatErrorCorrection = [1, 0]
 formatEncodage = [0, 0, 1, 0]
 
 
-def ErrorCorrection():
+def ErrorCorrection():      #correction d'erreur (à terminer quand on sera plus intelligents XD)
     y = 1
     x = 0
     d = 0
@@ -19,7 +19,7 @@ def ErrorCorrection():
 
 
 
-def Mask1():
+def Mask1():    #Affiche la version du masque
     y = 3
     d = 0
     x = 2
@@ -41,7 +41,7 @@ def FormatErrorCorrection():
         x = x + 2
         d = d + 1
 
-def FormatEncodage():
+def FormatEncodage():       #Affiche l'encodage du QR code
     y = FP.V1 - 1
     x = FP.V1 - 1
     d = 0
