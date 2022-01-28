@@ -108,7 +108,7 @@ def messagePose(M, Y, X, D):
 
     print( len(GB.liste)-1)
     # while M < len(GB.liste):
-    while M < 3:
+    while M < 4:
         print (M)
         tabCara = GB.liste[M]
         print(tabCara)
@@ -117,22 +117,19 @@ def messagePose(M, Y, X, D):
             tabCara.insert(0, 0)
 
         while D > 0:
-            message = tabCara[D]
-            if FP.A[Y, X] == 0:
-                FP.A[Y, X] = message
-                X = X - 1
+            message = tabCara[D]        #charge le cara
+            if FP.A[Y, X] == 0:         #verifie que la case devant et vide
+                FP.A[Y, X] = message    #si ok ecrit et decale a gauche et charge le prochain caractere
                 D = D - 1
                 message = tabCara[D]
-            else:
-                X = X - 1
-            if FP.A[Y, X] == 0:
-                FP.A[Y, X] = message
-                X = X + 1
-                Y = Y - 1
+            X = X - 1                   #si il y a queleque chose decalde a gauche
+
+
+            if FP.A[Y, X] == 0:         #verifie que la case devant et vide
+                FP.A[Y, X] = message    #si ok ecrit et decale en haut a droite et charge le prochain caractere
                 D = D - 1
-            else:
-                X = X + 1
-                Y = Y - 1
+            X = X + 1
+            Y = Y - 1
         D = 7
         M = M + 1
 
