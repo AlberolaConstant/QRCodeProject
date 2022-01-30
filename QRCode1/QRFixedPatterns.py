@@ -46,20 +46,25 @@ def petit_carre(X = 2, Y = 2, C = 0):
 
 def fixedP():
     y = 8
-    while y < C.V1-8:
+    while y < C.V1 - 8:
         A[y, 6] = 1
-        y = y + 2
+        y = y + 1
+        A[y, 6] = 0.1
+        y = y + 1
 
     x = 8
     while x < C.V1 - 8:
         A[6, x] = 1
-        x = x + 2
+        x = x + 1
+        A[6, x] = 0.1
+        x = x + 1
 
     A[C.V1-8, 8] = 1
 
 def carreBlancV(X=7, Y=0, C=0):
-    while C < 7:
+    while C < 8:
         A[Y, X] = 0.1
+        A[X, Y] = 0.1
         Y = Y + 1
         C = C + 1
 
@@ -72,14 +77,14 @@ def calibragePattern():
     carreG(Y=0, X=C.V1-7)
     carre_blanc(Y=1, X=C.V1-6)
     petit_carre(Y=2, X=C.V1-5)
-    carreBlancV(X=7, Y=C.V1-7, C=0)
+    carreBlancV(X=7, Y=C.V1-8, C=0)
 
     carreG(Y=C.V1-7, X=0)
     carre_blanc(Y=C.V1-6, X=1)
     petit_carre(Y=C.V1-5, X=2)
     carreBlancV(X=C.V1-8, Y=0, C=0)
 
-    # fixedP()
+    fixedP()
 
 # print(A)
 # plt.imshow(A, cmap = 'binary', vmin = 0, vmax = 1, interpolation = 'none')
