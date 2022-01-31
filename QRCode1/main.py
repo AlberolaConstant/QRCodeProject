@@ -11,7 +11,7 @@ import Constante as C
 # MA.Mask1Application()
 FP.calibragePattern()
 FI.InfoH()
-MS.messagePose(M=0, Y=C.V1 - 1, X=C.V1 - 1, D=7)
+# MS.messagePose(M=0, Y=C.VersionQR - 1, X=C.VersionQR - 1, D=7)
 
 
 # dessinez le QR code

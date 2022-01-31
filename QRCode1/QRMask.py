@@ -3,7 +3,7 @@ import Constante as C
 
 def Mask1ApplicationX(Y = 0, X = 0):
 
-    while X < C.V1:
+    while X < C.VersionQR:
         if FP.A[Y,X] == 1:
             FP.A[Y,X] = 0
             X = X +1
