@@ -1,6 +1,6 @@
 import QRFixedPatterns as FP
 
-def Mask1ApplicationX(Y = 0, X = 0):    #Masque
+def Mask001Application(Y = 0, X = 0):    #Masque 001
     for i in range(11):
         while X < FP.V1:
             if FP.A[Y,X] == 1:
@@ -9,6 +9,17 @@ def Mask1ApplicationX(Y = 0, X = 0):    #Masque
             else:
                 FP.A[Y, X] = 1
                 X = X + 1
-        y = y + 2
+        Y = Y + 1
+
+def Mask010Application(Y = 0, X = 0):    #Masque 010
+    for i in range(11):
+        while Y < FP.V1:
+            if FP.A[Y,X] == 1:
+                FP.A[Y,X] = 0
+                Y = Y +1
+            else:
+                FP.A[Y, X] = 1
+                Y = Y + 1
+        X = X + 1
 
 
