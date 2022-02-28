@@ -74,8 +74,7 @@ def calibrageV2(X=C.VersionQR, Y=C.VersionQR, C=0):
         A[X, Y] = 1
         Y = Y - 1
         C = C + 1
-    C = 0
-    while C < 5:
+    while C < 9:
         A[Y, X] = 1
         A[X, Y] = 1
         X = X - 1
@@ -87,12 +86,13 @@ def calibrageV3(X=C.VersionQR, Y=C.VersionQR, C=0):
         A[X, Y] = 0.1
         Y = Y - 1
         C = C + 1
-    C = 0
-    while C < 3:
+    while C < 5:
         A[Y, X] = 0.1
         A[X, Y] = 0.1
         X = X - 1
         C = C + 1
+    print(X,Y)
+    A[Y+1, X+2] = 1
 
 def calibragePattern():
     carreG(Y=0, X=0)
@@ -112,7 +112,7 @@ def calibragePattern():
 
     fixedP()
 
-    if C.VersionQR == 25:
+    if C.VersionQR > 25:
         calibrageV2(X=C.VersionQR - 5 , Y=C.VersionQR - 5, C=0)
         calibrageV3(X=C.VersionQR - 6, Y=C.VersionQR - 6, C=0)
 
