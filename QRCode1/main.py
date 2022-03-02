@@ -4,12 +4,10 @@ from matplotlib import pyplot as plt
 import QRFixedPatterns as FP
 import QRFormatInfo as FI
 import QRMessage as MS
+import QRGenerBinaire as GB
 import QRMask as MA
 import Constante as C
-import interface as I
 
-
-# I.interface()
 
 FP.calibragePattern()
 FI.InfoH()
