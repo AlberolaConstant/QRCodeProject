@@ -7,10 +7,9 @@ V40 = 177
 
 VersionQR = V3
 
-
-mask1 = [1, 0.1, 0.1]
+mask1 = [0.9, 0.1, 0.1]
 
 
 mask = mask1
 
-errorCorrectionL = [1, 1]
+errorCorrectionL = [0.9, 0.9]

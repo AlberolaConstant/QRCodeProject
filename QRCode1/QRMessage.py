@@ -6,7 +6,6 @@ import Constante as C
 
 def messagePose(M, Y, X, D):
 
-    print( len(GB.liste)-1)
     etat = 0
     while M < len(GB.liste):
     # while M < 7:
