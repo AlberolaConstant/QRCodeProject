@@ -36,7 +36,7 @@ def Mask1ApplicationPro(Y = 0, X = 0):
                     X = X + 1
 
                 else:
-                    X = X + 1
+                    break
             Y=Y+1
             X=0
         else:
@@ -58,7 +58,7 @@ def Mask2ApplicationPro(Y=0, X=0):
                     Y = Y + 1
 
                 else:
-                    Y = Y + 1
+                    break
             X = X + 1
             Y = 0
         else:
