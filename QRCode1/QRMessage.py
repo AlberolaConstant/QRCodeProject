@@ -2,6 +2,8 @@ import QRFixedPatterns as FP
 import QRGenerBinaire as GB
 import Constante as C
 
+"""pose le message dans la matrix en esquivant les bloc qui on deja une valeur"""
+
 def messagePose(M, Y, X, D):
 
     print( len(GB.liste)-1)
@@ -14,17 +16,17 @@ def messagePose(M, Y, X, D):
             tabCara.insert(0, 0)
 
         while D > 0:
-            message = tabCara[D]        #charge le cara
+            message = tabCara[D]
             if etat == 0:
-                if FP.A[Y, X] == 0:         #verifie que la case devant et vide
-                    FP.A[Y, X] = message    #si ok ecrit et decale a gauche et charge le prochain caractere
+                if FP.A[Y, X] == 0:
+                    FP.A[Y, X] = message
                     D = D - 1
                     message = tabCara[D]
                 X = X - 1
 
 
-                if FP.A[Y, X] == 0:         #verifie que la case devant et vide
-                    FP.A[Y, X] = message    #si ok ecrit et decale en haut a droite et charge le prochain caractere
+                if FP.A[Y, X] == 0:
+                    FP.A[Y, X] = message
                     D = D - 1
                 X = X + 1
                 if Y == 0:
@@ -35,18 +37,18 @@ def messagePose(M, Y, X, D):
 
             #---------------------vers le bas------------------#
             elif etat == 1:
-                if FP.A[Y, X] == 0:         #verifie que la case devant et vide
-                    FP.A[Y, X] = message    #si ok ecrit et decale a gauche et charge le prochain caractere
+                if FP.A[Y, X] == 0:
+                    FP.A[Y, X] = message
                     D = D - 1
                     message = tabCara[D]
-                X = X - 1                   #si il y a queleque chose decalde a gauche
+                X = X - 1
 
 
-                if FP.A[Y, X] == 0:         #verifie que la case devant et vide
-                    FP.A[Y, X] = message    #si ok ecrit et decale en haut a droite et charge le prochain caractere
+                if FP.A[Y, X] == 0:
+                    FP.A[Y, X] = message
                     D = D - 1
                 X = X + 1
-                if Y == C.V1-1:
+                if Y == C.VersionQR-1:
                     etat = 0
                     X = X - 2
                 else:

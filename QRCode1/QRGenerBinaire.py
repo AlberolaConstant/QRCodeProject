@@ -1,6 +1,6 @@
 from numpy import integer
 
-Information = 'projet qr code ptut'
+Information = 'projet qr code ptut qui me soule grave quelle projet/cool(QRCODE)sdfd'
 i = 0
 caraNum = []
 liste = []
