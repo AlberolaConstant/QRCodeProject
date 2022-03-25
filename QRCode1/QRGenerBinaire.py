@@ -2,7 +2,7 @@ from numpy import integer
 from PIL import Image
 import numpy
 
-Information = 'projet qr code ptut qui me soule grave quelle projet/cool(QRCODE)sdfd'
+Information = 'projet qr code ptut cool 2'
 i = 0
 k = 0
 caraNum = []
@@ -12,7 +12,7 @@ imgbin = []
 # img = Image.open("img/smile.jpg")
 # np_img = numpy.array(img)
 
-print (Information)
+# print (Information)
 while i < len(Information):
     caraNum = format(ord(Information[i]), 'b')
     liste.append(caraNum)
@@ -36,5 +36,5 @@ while i < len(Information):
 #         imgbin.append(conv)
 
 
-print (liste)
-print ("l'image:",imgbin)
+# print (liste)
+# print ("l'image:",imgbin)

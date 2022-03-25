@@ -2,6 +2,7 @@ import QRFixedPatterns as FP
 import Constante as C
 
 def Mask0ApplicationPro(Y = 0, X = 0):
+    # C.mask = C.mask0.copy()
     while Y < C.VersionQR:
         while X < C.VersionQR:
             if (X + Y) % 2 == 0:
@@ -160,3 +161,78 @@ def Mask7ApplicationPro(Y = 0, X = 0):
                 X=X+1
         Y=Y+1
         X=0
+
+
+def bestMaskHX5(Y=0, X=0, cptZero=0, cptUn=0, cptPoint=0):
+    while Y < C.VersionQR:
+        while X < C.VersionQR:
+            if FP.A[Y, X] == 0:
+                cptUn = 0
+                cptZero += 1
+                if cptZero == 5:
+                    cptPoint += 3
+                if cptZero > 5:
+                    while FP.A[Y, X] == 0:
+                        cptPoint += 1
+                        X += 1
+                        if X == C.VersionQR:
+                            break
+
+            elif FP.A[Y, X] == 1:
+                cptZero = 0
+                cptUn += 1
+                if cptUn == 5:
+                    cptPoint += 3
+                if cptUn > 5:
+                    while FP.A[Y, X] == 1:
+                        cptPoint += 1
+                        X += 1
+                        if X == C.VersionQR:
+                            break
+
+            elif FP.A[Y, X] != 1 and FP.A[Y, X] != 0:
+                cptUn = 0
+                cptZero = 0
+            X += 1
+        Y += 1
+        X = 0
+        cptZero = 0
+        cptUn = 0
+    print("nb point horizontale : ", cptPoint)
+
+def bestMaskVX5(Y = 0, X = 0, cptZero = 0, cptUn = 0, cptPoint = 0):
+    while X < C.VersionQR:
+        while Y < C.VersionQR:
+            if FP.A[Y,X] == 0:
+                cptUn = 0
+                cptZero += 1
+                if cptZero == 5:
+                    cptPoint +=3
+                if cptZero > 5:
+                    while FP.A[Y,X] == 0:
+                        cptPoint += 1
+                        Y+= 1
+                        if Y == C.VersionQR:
+                            break
+
+            elif FP.A[Y,X] == 1:
+                cptZero = 0
+                cptUn += 1
+                if cptUn == 5:
+                    cptPoint +=3
+                if cptUn > 5:
+                    while FP.A[Y,X] == 1:
+                        cptPoint += 1
+                        Y += 1
+                        if Y == C.VersionQR:
+                            break
+
+            elif FP.A[Y,X] != 1 and FP.A[Y,X] != 0:
+                cptUn = 0
+                cptZero = 0
+            Y += 1
+        X +=1
+        Y = 0
+        cptZero = 0
+        cptUn = 0
+    print("nb point verticale : ", cptPoint)
