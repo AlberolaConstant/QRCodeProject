@@ -163,7 +163,7 @@ def Mask7ApplicationPro(Y = 0, X = 0):
         X=0
 
 
-def bestMaskHX5(Y=0, X=0, cptZero=0, cptUn=0, cptPoint=0):
+def bestMaskHX5(Y=0, X=0, cptZero=0, cptUn=0, cptPointHX5=0):
     while Y < C.VersionQR:
         while X < C.VersionQR:
             if FP.A[Y, X] == 0:
@@ -200,7 +200,7 @@ def bestMaskHX5(Y=0, X=0, cptZero=0, cptUn=0, cptPoint=0):
         cptUn = 0
     print("nb point horizontale : ", cptPoint)
 
-def bestMaskVX5(Y = 0, X = 0, cptZero = 0, cptUn = 0, cptPoint = 0):
+def bestMaskVX5(Y = 0, X = 0, cptZero = 0, cptUn = 0, cptPointVX5 = 0):
     while X < C.VersionQR:
         while Y < C.VersionQR:
             if FP.A[Y,X] == 0:
@@ -236,3 +236,20 @@ def bestMaskVX5(Y = 0, X = 0, cptZero = 0, cptUn = 0, cptPoint = 0):
         cptZero = 0
         cptUn = 0
     print("nb point verticale : ", cptPoint)
+
+
+def bestMaskNB (X = 0, Y = 0, cptZero = 0, cptUn = 0, cptPointNB = 0, cptDiff = 0) : #calcul la différence de pixels noirs et de pixels blancs
+    while X < C.VersionQR:
+        while Y < C.VersionQR:
+            if FP.A[Y, X] == 0:
+                cptZero = cptZero + 1
+            else:
+                cptUn = cptUn + 1
+            Y = Y + 1
+        X = X + 1
+    cptDiff = cptZero - cptUn;
+    if cptDiff < 0:
+        cptDiff = cptDiff * -1
+    if cptDiff != 0 :
+        cptPointNB = cptPointNB + cptDiff
+
