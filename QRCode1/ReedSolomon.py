@@ -274,3 +274,4 @@ print("tableau de décimal : ", dCode)
 bCode = DecimalToBinary(dCode)  #bCode est le tableau de binaire après RS
 print("Tableau de binaire : ", bCode)
 # print(tCode.DecimalToBinary(tCode))
+
