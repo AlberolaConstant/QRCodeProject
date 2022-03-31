@@ -14,19 +14,19 @@ def messagePose(M, Y, X, D):
         while len(tabCara) < 8:
             tabCara.insert(0, 0)
 
-        while D > 0:
+        while D < 7:
             message = tabCara[D]
             if etat == 0:
                 if FP.A[Y, X] == 0:
                     FP.A[Y, X] = message
-                    D = D - 1
+                    D = D + 1
                     message = tabCara[D]
                 X = X - 1
 
 
                 if FP.A[Y, X] == 0:
                     FP.A[Y, X] = message
-                    D = D - 1
+                    D = D + 1
                 X = X + 1
                 if Y == 0:
                     X = X - 2
@@ -38,21 +38,21 @@ def messagePose(M, Y, X, D):
             elif etat == 1:
                 if FP.A[Y, X] == 0:
                     FP.A[Y, X] = message
-                    D = D - 1
+                    D = D + 1
                     message = tabCara[D]
                 X = X - 1
 
 
                 if FP.A[Y, X] == 0:
                     FP.A[Y, X] = message
-                    D = D - 1
+                    D = D + 1
                 X = X + 1
                 if Y == C.VersionQR-1:
                     etat = 0
                     X = X - 2
                 else:
                     Y = Y + 1
-        D = 7
+        D = 0
         M = M + 1
 
 
