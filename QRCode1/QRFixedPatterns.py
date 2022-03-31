@@ -93,6 +93,25 @@ def calibrageV3(X=C.VersionQR, Y=C.VersionQR, C=0):
         C = C + 1
     A[Y+1, X+2] = 0.9
 
+def CarreCalibrage(X=C.VersionQR-5, Y=C.VersionQR-5, C=0):
+    while C < 4:
+        A[Y, X] = 0.9
+        Y = Y - 1
+        C = C + 1
+    while C < 8:
+        A[Y, X] = 0.9
+        X = X - 1
+        C = C + 1
+    while C < 12:
+        A[Y, X] = 0.9
+        Y = Y + 1
+        C = C + 1
+    while C < 16:
+        A[Y, X] = 0.9
+        X = X + 1
+        C = C + 1
+
+
 def calibragePattern():
     carreG(Y=0, X=0)
     carre_blanc(Y=1, X=1)
@@ -112,7 +131,9 @@ def calibragePattern():
     fixedP()
 
     if C.VersionQR > 25:
-        calibrageV2(X=C.VersionQR - 5 , Y=C.VersionQR - 5, C=0)
-        calibrageV3(X=C.VersionQR - 6, Y=C.VersionQR - 6, C=0)
+        # calibrageV2(X=C.VersionQR - 5, Y=C.VersionQR - 5, C=0)
+        # calibrageV3(X=C.VersionQR - 6, Y=C.VersionQR - 6, C=0)
+        CarreCalibrage()
+
 
 

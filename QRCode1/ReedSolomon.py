@@ -261,5 +261,3 @@ def DecimalToBinary(Tab):
             bnum = int(bnum / 2)
         Tab[pos] = dnum
     return Tab
-
-
