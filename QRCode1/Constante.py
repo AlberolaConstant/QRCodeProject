@@ -16,7 +16,4 @@ mask5 = [0.9, 0.1, 0.9]
 mask6 = [0.9, 0.9, 0.1]
 mask7 = [0.9, 0.9, 0.9]
 
-
-mask = mask1.copy()
-
 errorCorrectionL = [0.9, 0.9]

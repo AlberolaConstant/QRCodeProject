@@ -2,8 +2,8 @@ import QRFixedPatterns as FP
 import Constante as C
 
 
-formatErrorCorrection = [1, 0.1]
-formatEncodage = [0.1, 1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1]
+formatErrorCorrection = [0.9, 0.1]
+formatEncodage = [0.1, 0.9, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1]
 
 
 def ErrorCorrection(y=1, x=0, d=0):
@@ -17,11 +17,11 @@ def ErrorCorrection(y=1, x=0, d=0):
 
 
 
-def Mask1(y = C.VersionQR - 3, d = 0, x = 2):
+def Maskspace(y = C.VersionQR - 5, d = 0, x = 5):
 
     while d < 3:
-        FP.A[y, 8] = C.mask[d]
-        FP.A[8, x] = C.mask[d]
+        FP.A[y, 8] = 0.1
+        FP.A[8, x] = 0.1
         y = y + 1
         x = x - 1
         d = d + 1
@@ -47,7 +47,6 @@ def FormatEncodage(y = C.VersionQR - 1,x = C.VersionQR - 1,d = 0):
         d = d + 1
 
 def pourfaireJolie(y = 8, d = 0, x = C.VersionQR-1):
-    print()
     while d < 8:
         FP.A[y,x] = 0.9
         x = x - 1
@@ -56,7 +55,7 @@ def pourfaireJolie(y = 8, d = 0, x = C.VersionQR-1):
 
 def InfoH():
     ErrorCorrection(y=1, x=0, d=0)
-    Mask1(y=C.VersionQR - 5, d=0, x=4)
+    Maskspace(y=C.VersionQR - 5, d=0, x=4)
     FormatErrorCorrection(y=6, d=0, x=5)
     FormatEncodage(y=C.VersionQR - 1, x=C.VersionQR - 1, d=0)
     pourfaireJolie(y=8, d=0, x=C.VersionQR - 1)

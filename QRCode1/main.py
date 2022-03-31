@@ -10,12 +10,9 @@ import Constante as C
 
 FP.calibragePattern()
 FI.InfoH()
-MS.messagePose(M=0, Y=C.VersionQR - 1, X=C.VersionQR - 1, D=7)
-MA.Mask0ApplicationPro()
-FI.InfoH()
-
-MA.bestMaskHX5()
-MA.bestMaskVX5()
+# MS.messagePose(M=0, Y=C.VersionQR - 1, X=C.VersionQR - 1, D=7)
+# MA.Mask0ApplicationPro()
+MA.testmask()
 
 # dessinez le QR code
 # print(FP.A)

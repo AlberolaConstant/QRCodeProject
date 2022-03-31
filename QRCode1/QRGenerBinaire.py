@@ -2,7 +2,7 @@ from numpy import integer
 from PIL import Image
 import numpy
 
-Information = 'projet qr code ptut cool 2'
+Information = 'projet qr code ptut cool 2 fou'
 i = 0
 k = 0
 caraNum = []
