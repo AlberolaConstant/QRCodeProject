@@ -262,16 +262,4 @@ def DecimalToBinary(Tab):
         Tab[pos] = dnum
     return Tab
 
-testRS = ReedSolomon()
-
-Mesg = "Test message"  # Symboles de message
-Size = 12  # Taille des symboles de message
-
-# encode the message
-dCode = testRS.RSEncode(Mesg, Size)   #tCode est le tableau de décimal après RS
-print("tableau de décimal : ", dCode)
-
-bCode = DecimalToBinary(dCode)  #bCode est le tableau de binaire après RS
-print("Tableau de binaire : ", bCode)
-# print(tCode.DecimalToBinary(tCode))
 
