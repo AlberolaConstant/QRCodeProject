@@ -8,7 +8,6 @@ def messagePose(M, Y, X, D):
 
     etat = 0
     while M < len(GB.liste):
-    # while M < 7:
         tabCara = GB.liste[M]
         tabCara = list(tabCara.strip())
         while len(tabCara) < 8:
