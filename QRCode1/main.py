@@ -12,13 +12,12 @@ import QRGenerBinaire as GB
 
 FP.calibragePattern()
 FI.InfoH()
-# MS.messagePose(M=0, Y=C.VersionQR - 1, X=C.VersionQR - 1, D=7)
+MS.messagePose(M=0, Y=C.VersionQR - 1, X=C.VersionQR - 1, D=0)
 # x = RS.ReedSolomon()
 # x = x.RSEncode(GB.Information,11)
 # x = RS.DecimalToBinary(x)
 # print(x)
-
-# MA.testmask()
+MA.testmask()
 
 # dessinez le QR code
 # print(FP.A)

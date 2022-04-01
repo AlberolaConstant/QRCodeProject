@@ -3,7 +3,7 @@ import numpy as np
 import QRFixedPatterns as FP
 import Constante as C
 
-def Mask(I = C.VersionQR - 5, d = 0, J = 5, mask = C.mask0):
+def Mask(I = C.VersionQR - 5, d = 0, J = 4, mask = C.mask0):
     while d < 3:
         FP.A[I, 8] = mask[d]
         FP.A[8, J] = mask[d]
@@ -14,7 +14,7 @@ def Mask(I = C.VersionQR - 5, d = 0, J = 5, mask = C.mask0):
 
 def Mask0ApplicationPro(Y = 0, X = 0):
 
-    Mask(I = C.VersionQR - 5, d = 0, J = 5, mask = C.mask0)
+    Mask(I = C.VersionQR - 5, d = 0, J = 4, mask = C.mask0)
 
     while Y < C.VersionQR:
         while X < C.VersionQR:
@@ -37,7 +37,7 @@ def Mask0ApplicationPro(Y = 0, X = 0):
 
 
 def Mask1ApplicationPro(Y = 0, X = 0):
-    Mask(I = C.VersionQR - 5, d = 0, J = 5, mask=C.mask1)
+    Mask(I = C.VersionQR - 5, d = 0, J = 4, mask=C.mask1)
     while Y < C.VersionQR:
         if Y % 2 == 0:
             while X < C.VersionQR:
@@ -60,7 +60,7 @@ def Mask1ApplicationPro(Y = 0, X = 0):
 
 
 def Mask2ApplicationPro(Y=0, X=0):
-    Mask(I = C.VersionQR - 5, d = 0, J = 5, mask=C.mask2)
+    Mask(I = C.VersionQR - 5, d = 0, J = 4, mask=C.mask2)
     while X < C.VersionQR:
         if X % 3 == 0:
             while Y < C.VersionQR:
@@ -83,7 +83,7 @@ def Mask2ApplicationPro(Y=0, X=0):
             Y = 0
 
 def Mask3ApplicationPro(Y = 0, X = 0):
-    Mask(I = C.VersionQR - 5, d = 0, J = 5, mask=C.mask3)
+    Mask(I = C.VersionQR - 5, d = 0, J = 4, mask=C.mask3)
 
     while Y < C.VersionQR:
         while X < C.VersionQR:
@@ -105,7 +105,7 @@ def Mask3ApplicationPro(Y = 0, X = 0):
 
 
 def Mask4ApplicationPro(Y = 0, X = 0):
-    Mask(I = C.VersionQR - 5, d = 0, J = 5, mask=C.mask4)
+    Mask(I = C.VersionQR - 5, d = 0, J = 4, mask=C.mask4)
     while Y < C.VersionQR:
         while X < C.VersionQR:
             if (Y//2 + X//3) % 2 == 0:
@@ -125,7 +125,7 @@ def Mask4ApplicationPro(Y = 0, X = 0):
         X=0
 
 def Mask5ApplicationPro(Y = 0, X = 0):
-    Mask(I = C.VersionQR - 5, d = 0, J = 5, mask=C.mask5)
+    Mask(I = C.VersionQR - 5, d = 0, J = 4, mask=C.mask5)
     while Y < C.VersionQR:
         while X < C.VersionQR:
             if ((X*Y)%2+(X*Y)%3) == 0:
@@ -145,7 +145,7 @@ def Mask5ApplicationPro(Y = 0, X = 0):
         X=0
 
 def Mask6ApplicationPro(Y = 0, X = 0):
-    Mask(I = C.VersionQR - 5, d = 0, J = 5, mask=C.mask6)
+    Mask(I = C.VersionQR - 5, d = 0, J = 4, mask=C.mask6)
     while Y < C.VersionQR:
         while X < C.VersionQR:
             if ((X*Y)%3+X*Y)%2 == 0:
@@ -165,7 +165,7 @@ def Mask6ApplicationPro(Y = 0, X = 0):
         X=0
 
 def Mask7ApplicationPro(Y = 0, X = 0):
-    Mask(I = C.VersionQR - 5, d = 0, J = 5, mask=C.mask7)
+    Mask(I = C.VersionQR - 5, d = 0, J = 4, mask=C.mask7)
     while Y < C.VersionQR:
         while X < C.VersionQR:
             if ((X*Y)%3+X+Y)%2 == 0:

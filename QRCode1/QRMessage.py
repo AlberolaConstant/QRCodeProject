@@ -13,7 +13,6 @@ def messagePose(M, Y, X, D):
         tabCara = list(tabCara.strip())
         while len(tabCara) < 8:
             tabCara.insert(0, 0)
-
         while D < 7:
             message = tabCara[D]
             if etat == 0:
