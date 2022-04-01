@@ -290,14 +290,14 @@ def chercheCarre(X = 0, Y = 0, cptPointCarre = 0) :
     print("nb point carre : ", cptPointCarre)
     return cptPointCarre
 
-def chercheMotif(X = 0, Y = 0, cptPointMotif = 0):
+def chercheMotifH(X = 0, Y = 0, cptPointMotif = 0):
     while Y < C.VersionQR:
         while X < C.VersionQR-10:
             if FP.A[Y, X] == 1 and FP.A[Y, X + 1] == 0 and FP.A[Y, X + 2] == 1 and FP.A[Y, X + 3] == 1 and FP.A[Y, X + 4] == 1 and FP.A[Y, X + 5] == 0 and FP.A[Y, X + 6] == 1:
                 if FP.A[Y, X+8] == 0 and FP.A[Y, X+9] == 0 and FP.A[Y, X+10] == 0:
                     cptPointMotif += 1
 
-                if FP.A[Y, X+-1] == 0 and FP.A[Y, X-2] == 0 and FP.A[Y, X-3] == 0:
+                if FP.A[Y, X-1] == 0 and FP.A[Y, X-2] == 0 and FP.A[Y, X-3] == 0:
                     cptPointMotif += 1
                 X += 1
             else:
@@ -305,11 +305,29 @@ def chercheMotif(X = 0, Y = 0, cptPointMotif = 0):
 
         Y += 1
         X = 0
-    print("nb point Motif : ", cptPointMotif)
+    print("nb point MotifH : ", cptPointMotif)
+    return cptPointMotif
+
+def chercheMotifV(X = 0, Y = 0, cptPointMotif = 0):
+    while X < C.VersionQR:
+        while Y < C.VersionQR-10:
+            if FP.A[Y, X] == 1 and FP.A[Y+1, X] == 0 and FP.A[Y+2, X] == 1 and FP.A[Y+3, X] == 1 and FP.A[Y+4, X] == 1 and FP.A[Y+5, X] == 0 and FP.A[Y+6, X] == 1:
+                if FP.A[Y+8, X] == 0 and FP.A[Y+9, X] == 0 and FP.A[Y+10, X] == 0:
+                    cptPointMotif += 1
+
+                if FP.A[Y-1, X] == 0 and FP.A[Y-2, X] == 0 and FP.A[Y-3, X] == 0:
+                    cptPointMotif += 1
+                Y += 1
+            else:
+                Y += 1
+
+        X += 1
+        Y = 0
+    print("nb point MotifV : ", cptPointMotif)
     return cptPointMotif
 
 def Alltestmask():
-    point = bestMaskHX5()+bestMaskVX5()+chercheCarre()+bestMaskNB()+chercheMotif()
+    point = bestMaskHX5()+bestMaskVX5()+chercheCarre()+bestMaskNB()+chercheMotifV()+chercheMotifH()
     return point
 
 def testmask():

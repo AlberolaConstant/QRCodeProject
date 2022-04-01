@@ -11,7 +11,7 @@ import QRGenerBinaire as GB
 
 
 FP.calibragePattern()
-# FI.InfoH()
+FI.InfoH()
 # MS.messagePose(M=0, Y=C.VersionQR - 1, X=C.VersionQR - 1, D=7)
 # x = RS.ReedSolomon()
 # x = x.RSEncode(GB.Information,11)
