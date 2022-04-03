@@ -16,9 +16,12 @@ mask5 = [1, 0, 1]
 mask6 = [1, 1, 0]
 mask7 = [1, 1, 1]
 
+mask = mask4
+
 errorCorrectionL = [0, 1]
 errorCorrectionM = [0, 0]
 errorCorrectionQ = [1, 1]
 errorCorrectionH = [1, 0]
-
-chaineforma = errorCorrectionL+mask4
+errorCorrection = errorCorrectionL
+# chaineforma = errorCorrectionL+mask4
+chaineforma = errorCorrection+mask4

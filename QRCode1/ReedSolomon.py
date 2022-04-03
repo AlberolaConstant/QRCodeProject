@@ -279,7 +279,6 @@ x = ReedSolomon()
 x = x.RSEncode(GB.Information,CorrecErreur(GB.Information,'L'))
 x = DecimalToBinary(x)
 
-print(CorrecErreur(GB.Information,'L'))
 
 def reedSolomonSTR():
     a = []

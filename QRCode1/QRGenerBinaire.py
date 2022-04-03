@@ -2,7 +2,11 @@ from numpy import integer
 from PIL import Image
 import numpy
 
-Information = 'HELLO WORLD.'
+
+
+
+
+Information = 'Hello World.'
 i = 0
 k = 0
 caraNum = []

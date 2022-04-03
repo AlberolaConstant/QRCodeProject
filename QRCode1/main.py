@@ -11,12 +11,14 @@ import QRGenerBinaire as GB
 
 FP.calibragePattern()
 FI.InfoVide()
-# MS.messagePose(M=0, Y=C.VersionQR - 1, X=C.VersionQR - 1, D=0, liste=GB.liste)
 MS.messagePose(M=0, Y=C.VersionQR - 3, X=C.VersionQR - 1, D=0, liste=RS.bits)
 FI.InfoPlein()
+# MA.Mask4ApplicationPro()
 # MA.testmask()
 
-# dessinez le QR code
-# print(FP.A)
+
+
+
+
 plt.imshow(FP.A, cmap = 'binary', vmin = 0, vmax = 1, interpolation = 'none')
 plt.show()

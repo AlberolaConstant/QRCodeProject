@@ -105,7 +105,7 @@ def Mask3ApplicationPro(Y = 0, X = 0):
 
 
 def Mask4ApplicationPro(Y = 0, X = 0):
-    Mask(I = C.VersionQR - 5, d = 0, J = 4, mask=C.mask4)
+    # Mask(I = C.VersionQR - 5, d = 0, J = 4, mask=C.mask4)
     while Y < C.VersionQR:
         while X < C.VersionQR:
             if (Y//2 + X//3) % 2 == 0:
