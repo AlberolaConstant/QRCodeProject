@@ -219,7 +219,6 @@ def bestMaskHX5(Y=0, X=0, cptZero=0, cptUn=0, cptPointHX5=0):
         X = 0
         cptZero = 0
         cptUn = 0
-    print("nb point horizontale : ", cptPointHX5)
     return cptPointHX5
 
 def bestMaskVX5(Y = 0, X = 0, cptZero = 0, cptUn = 0, cptPointVX5 = 0):
@@ -253,7 +252,6 @@ def bestMaskVX5(Y = 0, X = 0, cptZero = 0, cptUn = 0, cptPointVX5 = 0):
         Y = 0
         cptZero = 0
         cptUn = 0
-    print("nb point verticale : ", cptPointVX5)
     return cptPointVX5
 
 def bestMaskNB (X = 0, Y = 0, cptZero = 0, cptUn = 0, cptPointNB = 0, cptDiff = 0) : #calcul la différence de pixels noirs et de pixels blancs
@@ -270,7 +268,6 @@ def bestMaskNB (X = 0, Y = 0, cptZero = 0, cptUn = 0, cptPointNB = 0, cptDiff = 
         cptDiff = cptDiff * -1
     if cptDiff != 0 :
         cptPointNB = cptPointNB + cptDiff
-        print('point NB = ' ,cptPointNB)
         return cptPointNB
 
 
@@ -287,7 +284,6 @@ def chercheCarre(X = 0, Y = 0, cptPointCarre = 0) :
                 X += 1
         Y += 1
         X = 0
-    print("nb point carre : ", cptPointCarre)
     return cptPointCarre
 
 def chercheMotifH(X = 0, Y = 0, cptPointMotif = 0):
@@ -305,7 +301,6 @@ def chercheMotifH(X = 0, Y = 0, cptPointMotif = 0):
 
         Y += 1
         X = 0
-    print("nb point MotifH : ", cptPointMotif)
     return cptPointMotif
 
 def chercheMotifV(X = 0, Y = 0, cptPointMotif = 0):
@@ -323,7 +318,6 @@ def chercheMotifV(X = 0, Y = 0, cptPointMotif = 0):
 
         X += 1
         Y = 0
-    print("nb point MotifV : ", cptPointMotif)
     return cptPointMotif
 
 def Alltestmask():

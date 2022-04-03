@@ -2,7 +2,7 @@ from numpy import integer
 from PIL import Image
 import numpy
 
-Information = 'projet ptut qr'
+Information = 'HELLO WORLD'
 i = 0
 k = 0
 caraNum = []
@@ -13,12 +13,11 @@ imgbin = []
 # np_img = numpy.array(img)
 
 # print (Information)
-liste.append(format((len(Information)), 'b'))
+# liste.append(format((len(Information)), 'b'))
 while i < len(Information):
     caraNum = format(ord(Information[i]), 'b')
     liste.append(caraNum)
     i = i+1
-print (liste)
 
 
 # a = 0

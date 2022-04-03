@@ -1,14 +1,14 @@
 import QRFixedPatterns as FP
 import QRGenerBinaire as GB
 import Constante as C
-
+import ReedSolomon as RS
 """pose le message dans la matrix en esquivant les bloc qui on deja une valeur"""
 
-def messagePose(M, Y, X, D):
+def messagePose(M, Y, X, D, liste):
 
     etat = 0
-    while M < len(GB.liste):
-        tabCara = GB.liste[M]
+    while M < len(liste):
+        tabCara = liste[M]
         tabCara = list(tabCara.strip())
         while len(tabCara) < 8:
             tabCara.insert(0, 0)
@@ -52,12 +52,3 @@ def messagePose(M, Y, X, D):
                     Y = Y + 1
         D = 0
         M = M + 1
-
-
-
-
-
-
-
-
-
