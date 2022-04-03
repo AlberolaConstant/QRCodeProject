@@ -261,3 +261,16 @@ def DecimalToBinary(Tab):
             bnum = int(bnum / 2)
         Tab[pos] = dnum
     return Tab
+
+def CorrecErreur(mes, level):
+    if (level == "L"):
+        level = round(len(mes) * 0.071) * 2
+    if (level == "M"):
+        level = round(len(mes) * 0.151) * 2
+    if (level == "Q"):
+        level = round(len(mes) * 0.251) * 2
+    if (level == "H"):
+        level = round(len(mes) * 0.301) * 2
+    return level
+
+print(CorrecErreur("0123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789", "Q"))
