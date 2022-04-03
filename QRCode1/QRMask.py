@@ -12,10 +12,8 @@ def Mask(I = C.VersionQR - 5, d = 0, J = 4, mask = C.mask0):
         d = d + 1
 
 
-def Mask0ApplicationPro(Y = 0, X = 0):
-
-    Mask(I = C.VersionQR - 5, d = 0, J = 4, mask = C.mask0)
-
+def MaskApplication0(Y = 0, X = 0):
+    # Mask(I = C.VersionQR - 5, d = 0, J = 4, mask = C.mask0)
     while Y < C.VersionQR:
         while X < C.VersionQR:
             if (X + Y) % 2 == 0:
@@ -36,8 +34,8 @@ def Mask0ApplicationPro(Y = 0, X = 0):
 
 
 
-def Mask1ApplicationPro(Y = 0, X = 0):
-    Mask(I = C.VersionQR - 5, d = 0, J = 4, mask=C.mask1)
+def MaskApplication1(Y = 0, X = 0):
+    # Mask(I = C.VersionQR - 5, d = 0, J = 4, mask=C.mask1)
     while Y < C.VersionQR:
         if Y % 2 == 0:
             while X < C.VersionQR:
@@ -59,8 +57,8 @@ def Mask1ApplicationPro(Y = 0, X = 0):
             X=0
 
 
-def Mask2ApplicationPro(Y=0, X=0):
-    Mask(I = C.VersionQR - 5, d = 0, J = 4, mask=C.mask2)
+def MaskApplication2(Y=0, X=0):
+    # Mask(I = C.VersionQR - 5, d = 0, J = 4, mask=C.mask2)
     while X < C.VersionQR:
         if X % 3 == 0:
             while Y < C.VersionQR:
@@ -82,9 +80,8 @@ def Mask2ApplicationPro(Y=0, X=0):
             X = X + 1
             Y = 0
 
-def Mask3ApplicationPro(Y = 0, X = 0):
-    Mask(I = C.VersionQR - 5, d = 0, J = 4, mask=C.mask3)
-
+def MaskApplication3(Y = 0, X = 0):
+    # Mask(I = C.VersionQR - 5, d = 0, J = 4, mask=C.mask3)
     while Y < C.VersionQR:
         while X < C.VersionQR:
             if (X + Y) % 3 == 0:
@@ -104,7 +101,7 @@ def Mask3ApplicationPro(Y = 0, X = 0):
         X=0
 
 
-def Mask4ApplicationPro(Y = 0, X = 0):
+def MaskApplication4(Y = 0, X = 0):
     # Mask(I = C.VersionQR - 5, d = 0, J = 4, mask=C.mask4)
     while Y < C.VersionQR:
         while X < C.VersionQR:
@@ -124,8 +121,8 @@ def Mask4ApplicationPro(Y = 0, X = 0):
         Y=Y+1
         X=0
 
-def Mask5ApplicationPro(Y = 0, X = 0):
-    Mask(I = C.VersionQR - 5, d = 0, J = 4, mask=C.mask5)
+def MaskApplication5(Y = 0, X = 0):
+    # Mask(I = C.VersionQR - 5, d = 0, J = 4, mask=C.mask5)
     while Y < C.VersionQR:
         while X < C.VersionQR:
             if ((X*Y)%2+(X*Y)%3) == 0:
@@ -144,8 +141,8 @@ def Mask5ApplicationPro(Y = 0, X = 0):
         Y=Y+1
         X=0
 
-def Mask6ApplicationPro(Y = 0, X = 0):
-    Mask(I = C.VersionQR - 5, d = 0, J = 4, mask=C.mask6)
+def MaskApplication6(Y = 0, X = 0):
+    # Mask(I = C.VersionQR - 5, d = 0, J = 4, mask=C.mask6)
     while Y < C.VersionQR:
         while X < C.VersionQR:
             if ((X*Y)%3+X*Y)%2 == 0:
@@ -164,8 +161,8 @@ def Mask6ApplicationPro(Y = 0, X = 0):
         Y=Y+1
         X=0
 
-def Mask7ApplicationPro(Y = 0, X = 0):
-    Mask(I = C.VersionQR - 5, d = 0, J = 4, mask=C.mask7)
+def MaskApplication7(Y = 0, X = 0):
+    # Mask(I = C.VersionQR - 5, d = 0, J = 4, mask=C.mask7)
     while Y < C.VersionQR:
         while X < C.VersionQR:
             if ((X*Y)%3+X+Y)%2 == 0:
@@ -185,7 +182,7 @@ def Mask7ApplicationPro(Y = 0, X = 0):
         X=0
 
 
-def bestMaskHX5(Y=0, X=0, cptZero=0, cptUn=0, cptPointHX5=0):
+def ChercheCinqBitsH(Y=0, X=0, cptZero=0, cptUn=0, cptPointHX5=0):
     while Y < C.VersionQR:
         while X < C.VersionQR:
             if FP.A[Y, X] < 0.2:
@@ -211,9 +208,6 @@ def bestMaskHX5(Y=0, X=0, cptZero=0, cptUn=0, cptPointHX5=0):
                         X += 1
                         if X == C.VersionQR:
                             break
-            # elif FP.A[Y, X] != 1 and FP.A[Y, X] != 0:
-            #     cptUn = 0
-            #     cptZero = 0
             X += 1
         Y += 1
         X = 0
@@ -221,7 +215,7 @@ def bestMaskHX5(Y=0, X=0, cptZero=0, cptUn=0, cptPointHX5=0):
         cptUn = 0
     return cptPointHX5
 
-def bestMaskVX5(Y = 0, X = 0, cptZero = 0, cptUn = 0, cptPointVX5 = 0):
+def ChercheCinqBitsV(Y = 0, X = 0, cptZero = 0, cptUn = 0, cptPointVX5 = 0):
     while X < C.VersionQR:
         while Y < C.VersionQR:
             if FP.A[Y,X] < 0.2:
@@ -254,21 +248,20 @@ def bestMaskVX5(Y = 0, X = 0, cptZero = 0, cptUn = 0, cptPointVX5 = 0):
         cptUn = 0
     return cptPointVX5
 
-def bestMaskNB (X = 0, Y = 0, cptZero = 0, cptUn = 0, cptPointNB = 0, cptDiff = 0) : #calcul la différence de pixels noirs et de pixels blancs
-    while X < C.VersionQR:
-        while Y < C.VersionQR:
-            if FP.A[Y, X] == 0:
-                cptZero = cptZero + 1
+def PenaliteDiffBits () : #calcul la différence de pixels noirs et de pixels blancs
+    cptBlanc = 0
+    cptNoir = 0
+    for X in range(C.V1):
+        for Y in range(C.V1):
+            if FP.A[Y, X] <= 0.5:
+                cptBlanc = cptBlanc + 1
             else:
-                cptUn = cptUn + 1
-            Y = Y + 1
-        X = X + 1
-    cptDiff = cptZero - cptUn
-    if cptDiff < 0:
-        cptDiff = cptDiff * -1
-    if cptDiff != 0 :
-        cptPointNB = cptPointNB + cptDiff
-        return cptPointNB
+                cptNoir = cptNoir + 1
+    p = (cptNoir / 441) * 100
+    p = round(p - 50)
+    p = p * 2
+    return p
+
 
 
 def chercheCarre(X = 0, Y = 0, cptPointCarre = 0) :
@@ -321,41 +314,41 @@ def chercheMotifV(X = 0, Y = 0, cptPointMotif = 0):
     return cptPointMotif
 
 def Alltestmask():
-    point = bestMaskHX5()+bestMaskVX5()+chercheCarre()+bestMaskNB()+chercheMotifV()+chercheMotifH()
+    point = ChercheCinqBitsH() + ChercheCinqBitsV() + chercheCarre() + PenaliteDiffBits() + chercheMotifV() + chercheMotifH()
     return point
 
 def testmask():
     pointMask = []
     copy = FP.A.copy()
-    Mask0ApplicationPro()
+    MaskApplication0()
     pointMask.append(Alltestmask())
 
     FP.A = copy.copy()
-    Mask1ApplicationPro()
+    MaskApplication1()
     pointMask.append(Alltestmask())
 
     FP.A = copy.copy()
-    Mask2ApplicationPro()
+    MaskApplication2()
     pointMask.append(Alltestmask())
 
     FP.A = copy.copy()
-    Mask3ApplicationPro()
+    MaskApplication3()
     pointMask.append(Alltestmask())
 
     FP.A = copy.copy()
-    Mask4ApplicationPro()
+    MaskApplication4()
     pointMask.append(Alltestmask())
 
     FP.A = copy.copy()
-    Mask5ApplicationPro()
+    MaskApplication5()
     pointMask.append(Alltestmask())
 
     FP.A = copy.copy()
-    Mask6ApplicationPro()
+    MaskApplication6()
     pointMask.append(Alltestmask())
 
     FP.A = copy.copy()
-    Mask7ApplicationPro()
+    MaskApplication7()
     pointMask.append(Alltestmask())
 
     FP.A = copy.copy()
@@ -364,20 +357,20 @@ def testmask():
     minpoint = pointMask.index(min(pointMask))
 
     if minpoint == 0:
-        Mask0ApplicationPro()
+        MaskApplication0()
     elif minpoint == 1:
-        Mask1ApplicationPro()
+        MaskApplication1()
     elif minpoint == 2:
-        Mask2ApplicationPro()
+        MaskApplication2()
     elif minpoint == 3:
-        Mask3ApplicationPro()
+        MaskApplication3()
     elif minpoint == 4:
-        Mask4ApplicationPro()
+        MaskApplication4()
     elif minpoint == 5:
-        Mask5ApplicationPro()
+        MaskApplication5()
     elif minpoint == 6:
-        Mask6ApplicationPro()
+        MaskApplication6()
     elif minpoint == 7:
-        Mask7ApplicationPro()
+        MaskApplication7()
 
 

@@ -2,27 +2,21 @@ from numpy import integer
 from PIL import Image
 import numpy
 
-
-
-
-
-Information = 'Hello World.'
-i = 0
+Information = 'HELLO WORLD'
 k = 0
-caraNum = []
 liste = []
 imgbin = []
 
+
 # img = Image.open("img/smile.jpg")
 # np_img = numpy.array(img)
-
-# print (Information)
-# liste.append(format((len(Information)), 'b'))
-while i < len(Information):
-    caraNum = format(ord(Information[i]), 'b')
-    liste.append(caraNum)
-    i = i+1
-
+def genereBinaire(message = Information):
+    i = 0
+    caraNum = []
+    while i < len(message):
+        caraNum = format(ord(message[i]), 'b')
+        liste.append(caraNum)
+        i = i+1
 
 # a = 0
 # y=0

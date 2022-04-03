@@ -1,16 +1,9 @@
 import QRFixedPatterns as FP
 import Constante as C
 
-info = [0.1, 0.1, 0.1, 0.1,0.1]
-
-formatErrorCorrectionQ = [0.1,0.9]
 formatEncodage = [0, 1, 0, 0]
 
 errorCorrectionLevel = C.errorCorrectionL
-
-formatEncodageM0 = [0.1,0.9,0.1,0.9,0.9,0.9,0.9,0.9]
-# formatEncodageM3 = [0.9,0.9,0.9,0.9,0.1,0.1,0.1,0.9,0.1,0.1,0.9,0.9,0.9,0.1,0.9]
-
 
 def zerogauche(format):
     if format[0] == 0:
