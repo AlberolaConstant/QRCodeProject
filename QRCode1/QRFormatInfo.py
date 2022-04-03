@@ -3,7 +3,7 @@ import Constante as C
 
 
 formatErrorCorrection = [0.9, 0.1]
-formatEncodage = [0.1, 0.9, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1]
+formatEncodage = [0.1, 0.9, 0.1, 0.1]
 
 
 def ErrorCorrection(y=1, x=0, d=0):
@@ -37,7 +37,7 @@ def FormatErrorCorrection(y = 6, d = 0, x = 5):
 
 def FormatEncodage(y = C.VersionQR - 1,x = C.VersionQR - 1,d = 0):
 
-    while d < 8:
+    while d < 4:
         FP.A[y, x] = formatEncodage[d]
         x = x - 1
         d = d + 1

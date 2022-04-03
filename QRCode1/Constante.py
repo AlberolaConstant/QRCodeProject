@@ -5,7 +5,7 @@ V4 = 33
 V10 = 57
 V40 = 177
 
-VersionQR = V3
+VersionQR = V1
 
 mask0 = [0.1, 0.1, 0.1]
 mask1 = [0.1, 0.1, 0.9]
