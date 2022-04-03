@@ -3,6 +3,10 @@ import numpy as np
 import QRFixedPatterns as FP
 import Constante as C
 
+def truncate(n, decimals = 0):
+    multiplier = 10 ** decimals
+    return int(n * multiplier) / multiplier
+
 def Mask(I = C.VersionQR - 5, d = 0, J = 4, mask = C.mask0):
     while d < 3:
         FP.A[I, 8] = mask[d]
@@ -248,19 +252,24 @@ def ChercheCinqBitsV(Y = 0, X = 0, cptZero = 0, cptUn = 0, cptPointVX5 = 0):
         cptUn = 0
     return cptPointVX5
 
-def PenaliteDiffBits () : #calcul la différence de pixels noirs et de pixels blancs
-    cptBlanc = 0
-    cptNoir = 0
-    for X in range(C.V1):
-        for Y in range(C.V1):
-            if FP.A[Y, X] <= 0.5:
-                cptBlanc = cptBlanc + 1
-            else:
-                cptNoir = cptNoir + 1
-    p = (cptNoir / 441) * 100
-    p = round(p - 50)
-    p = p * 2
-    return p
+def PenaliteDiffBits (X=0, Y=0, cptZero=0, cptUn=0,cptPointNB=0) : #calcul la différence de pixels noirs et de pixels blancs
+    while X < C.VersionQR:
+        while X < C.VersionQR:
+            Y = 0
+            while Y < C.VersionQR:
+                if FP.A[Y, X] == 0:
+                    cptZero = cptZero + 1
+                else:
+                    cptUn = cptUn + 1
+                Y = Y + 1
+            X = X + 1
+
+            cptPointNB = (((cptUn / (cptUn + cptZero)) * 100) - 50)
+            cptPointNB = truncate(cptPointNB, 0)
+            if cptPointNB < 0:
+                cptPointNB = cptPointNB * -1
+            cptPointNB = cptPointNB * 2
+            return cptPointNB
 
 
 
