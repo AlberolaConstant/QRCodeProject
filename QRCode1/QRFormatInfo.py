@@ -6,6 +6,8 @@ info = [0.1, 0.1, 0.1, 0.1,0.1]
 formatErrorCorrectionQ = [0.1,0.9]
 formatEncodage = [0.1, 0.9, 0.1, 0.1]
 
+errorCorrectionLevel = C.errorCorrectionL
+
 formatEncodageM0 = [0.1,0.9,0.1,0.9,0.9,0.9,0.9,0.9]
 # formatEncodageM3 = [0.9,0.9,0.9,0.9,0.1,0.1,0.1,0.9,0.1,0.1,0.9,0.9,0.9,0.1,0.9]
 
@@ -32,7 +34,7 @@ def Maskspace(y = C.VersionQR - 5, d = 0, x = 5):
         x = x - 1
         d = d + 1
 
-def ErrorCorrection(y=1, x=0, d=0, errorCorrection=C.errorCorrectionQ):
+def ErrorCorrectionLevel(y=1, x=0, d=0, errorCorrection=errorCorrectionLevel):
     while y < 3:
         FP.A[C.VersionQR - y, 8] = errorCorrection[d]
         FP.A[8,x] = errorCorrection[d]
@@ -65,17 +67,22 @@ def FormatErrorCorrectionH(y =C.VersionQR - 14, d = 0, x = 8):
         y = y - 1
         d = d + 1
 
+# def plynomeformat(format=C.chaineforma):
+
+
+
+
 
 def InfoVide():
     Maskspace(y=C.VersionQR - 5, d=0, x=4)
     FormatEncodage(y=C.VersionQR - 1, x=C.VersionQR - 1, d=0)
     FormatErrorCorrectionD(y=8, d=0, x=C.VersionQR - 8)
-    ErrorCorrection(y=1, x=0, d=0, errorCorrection=info)
+    ErrorCorrectionLevel(y=1, x=0, d=0, errorCorrection=info)
     FormatErrorCorrection(y=6, d=0, x=5, formatErrorCorrection=info)
     FormatErrorCorrectionH(y=C.VersionQR - 13, d=0, x=8)
 
 def InfoPlein():
-    ErrorCorrection(y=1, x=0, d=0, errorCorrection=C.errorCorrectionQ)
-    FormatErrorCorrection(y=6, d=0, x=5, formatErrorCorrection=formatErrorCorrectionQ)
+    ErrorCorrectionLevel()
+    FormatErrorCorrection()
 
 

@@ -4,6 +4,8 @@
 # import numpy.polynomial.polynomial as nppol
 # import matplotlib.pyplot as plt
 # import galois
+import QRGenerBinaire as GB
+
 #
 # # def ReedSolomon (msg, k, t): #avec des NULL
 # #     n = 2**k - 1
@@ -273,4 +275,19 @@ def CorrecErreur(mes, level):
         level = round(len(mes) * 0.301) * 2
     return level
 
-print(CorrecErreur("0123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789", "Q"))
+x = ReedSolomon()
+x = x.RSEncode(GB.Information,CorrecErreur(GB.Information,'L'))
+x = DecimalToBinary(x)
+
+print(CorrecErreur(GB.Information,'L'))
+
+def reedSolomonSTR():
+    a = []
+    d = 0
+    for i in x:
+        a.append(str(x[d]))
+        d += 1
+    return a
+
+bits = reedSolomonSTR()
+bits.insert(0,(format((len(GB.Information)), 'b')))
